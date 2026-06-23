@@ -1,10 +1,153 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-<title>G.S. Shwemu School News</title>
-</head>
-<body>
-<h1>Welcome to G.S. Shwemu School News</h1>
-<p>Latest news, announcements, and events.</p>
-</body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G.S. Shwemu School News</title><style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+}
+
+header{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+nav{
+    background:#0055aa;
+    text-align:center;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.hero{
+    background:#004080;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.section{
+    padding:20px;
+}
+
+.news-card{
+    background:white;
+    padding:15px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+}
+
+.gallery img{
+    width:250px;
+    border-radius:10px;
+}
+
+.comment-box{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:5px 0;
+}
+
+button{
+    background:#0055aa;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+}
+
+.comment{
+    background:#eee;
+    margin-top:10px;
+    padding:10px;
+    border-radius:5px;
+}
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style></head><body><header>
+<h1>G.S. SHWEMU SCHOOL NEWS</h1>
+<p>Learn • Lead • Achieve</p>
+</header><nav>
+<a href="#">Home</a>
+<a href="#">News</a>
+<a href="#">Announcements</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</nav><section class="hero">
+<h2>Welcome to G.S. Shwemu School News</h2>
+<p>Latest news, announcements and events.</p>
+</section><section class="section">
+<h2>Latest News</h2><div class="news-card">
+<h3>Science Fair Coming Soon</h3>
+<p>Students are preparing innovative projects for this year's science fair.</p>
+</div><div class="news-card">
+<h3>Football Team Wins</h3>
+<p>Congratulations to our football team for winning the district competition.</p>
+</div>
+</section><section class="section">
+<h2>School Gallery</h2><div class="gallery">
+<img src="https://picsum.photos/300/200?1">
+<img src="https://picsum.photos/300/200?2">
+<img src="https://picsum.photos/300/200?3">
+</div>
+</section><section class="section">
+<h2>Comments ❤️</h2><div class="comment-box">
+<input type="text" id="name" placeholder="Your name">
+<textarea id="comment" placeholder="Write a comment..."></textarea>
+<button onclick="addComment()">Post Comment</button><div id="comments"></div>
+</div>
+</section><section class="section">
+<h2>Contact Us</h2>
+<p>Email: info@gsshwemu.edu</p>
+<p>Phone: +250 xxx xxx xxx</p>
+</section><footer>
+<p>© 2026 G.S. Shwemu School News</p>
+</footer><script>
+function addComment(){
+    let name=document.getElementById("name").value;
+    let comment=document.getElementById("comment").value;
+
+    if(name==="" || comment===""){
+        alert("Please enter your name and comment");
+        return;
+    }
+
+    let div=document.createElement("div");
+    div.className="comment";
+    div.innerHTML="<strong>"+name+"</strong><br>"+comment+" ❤️";
+
+    document.getElementById("comments").prepend(div);
+
+    document.getElementById("name").value="";
+    document.getElementById("comment").value="";
+}
+</script></body>
   </html>
